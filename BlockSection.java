@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 class BlockSection {
     private String blockCode;
@@ -7,22 +7,14 @@ class BlockSection {
     private ArrayList<Student> students;
 
     // Constructor
-    public BlockSection() {
-        students = new ArrayList<>();
+    public BlockSection(String blockCode, String description, String adviser) {
+        this.blockCode = blockCode;
+        this.description = description;
+        this.adviser = adviser;
+        this.students = new ArrayList<>();
     }
 
-    // Other methods
-
-    public void addStudent(Student student) {
-        students.add(student);
-    }
-
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
-
-    // Getters and setters
-
+    // Getter and setter methods
     public String getBlockCode() {
         return blockCode;
     }
@@ -49,6 +41,10 @@ class BlockSection {
 
     public ArrayList<Student> getStudents() {
         return students;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     public int getTotalStudent() {

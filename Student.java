@@ -1,29 +1,20 @@
-import java.util.ArrayList;
+import java.util.*;
 
 class Student {
     private String studentNumber;
     private String name;
     private String program;
-    private int totalUnitsEnrolled;
     private ArrayList<Course> courses;
 
-    public Student() {
-        courses = new ArrayList<>();
+    // Constructor
+    public Student(String studentNumber, String name, String program) {
+        this.studentNumber = studentNumber;
+        this.name = name;
+        this.program = program;
+        this.courses = new ArrayList<>();
     }
 
-    // Other methods
-
-    public void addCourse(Course course) {
-        courses.add(course);
-        updateTotalUnitsEnrolled();
-    }
-
-    private void updateTotalUnitsEnrolled() {
-        totalUnitsEnrolled = courses.stream().mapToInt(Course::getUnit).sum();
-    }
-
-    // Getters and setters
-
+    // Getter and setter methods
     public String getStudentNumber() {
         return studentNumber;
     }
@@ -48,11 +39,19 @@ class Student {
         this.program = program;
     }
 
-    public int getTotalUnitsEnrolled() {
-        return totalUnitsEnrolled;
-    }
-
     public ArrayList<Course> getCourses() {
         return courses;
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
+    public int getTotalUnitsEnrolled() {
+        int totalUnitsEnrolled = 0;
+        for (Course course : courses) {
+            totalUnitsEnrolled += course.getUnit();
+        }
+        return totalUnitsEnrolled;
     }
 }
