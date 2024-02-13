@@ -18,9 +18,9 @@ class BlockSectionDA {
             blockSection.setAdviser(blockSectionData[2].trim());
 
             StudentDA studentDA = new StudentDA(blockSection.getBlockCode());
-            ArrayList<Student> students = studentDA.getStudents(); // Get students for the block section
+            ArrayList<Student> students = studentDA.getStudents(); 
             for (Student student : students) {
-                blockSection.addStudent(student); // Add each student to the block section
+                blockSection.addStudent(student); 
             }
             blockSectionList.add(blockSection);
         }

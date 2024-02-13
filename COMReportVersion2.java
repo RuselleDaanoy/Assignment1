@@ -11,7 +11,7 @@ public class COMReportVersion2 {
         for (BlockSection blockSection : blockSections) {
             System.out.println("Block Section Code: " + blockSection.getBlockCode()
                     + "\nDescription: " + blockSection.getDescription()
-                    + "\nAdviser: " + blockSection.getAdviser()
+                    + "\nAdviser: " + blockSection.getAdviser() + "\n"
                     + "\nTotal Students: " + blockSection.getTotalStudent() + "\n");
 
             ArrayList<Student> students = blockSection.getStudents();
