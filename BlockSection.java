@@ -48,12 +48,5 @@ public class BlockSection {
     public int getTotalStudent() {
         return students.size();
     }
-
-    public int getTotalUnitsEnrolled() {
-        int totalUnitsEnrolled = 0;
-        for (Student student : students) {
-            totalUnitsEnrolled += student.getTotalUnitsEnrolled();
-        }
-        return totalUnitsEnrolled;
-    }
+    
 }
