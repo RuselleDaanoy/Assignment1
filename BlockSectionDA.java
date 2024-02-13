@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class BlockSectionDA {
+public class BlockSectionDA {
     private ArrayList<BlockSection> blockSectionList;
 
     public BlockSectionDA() throws FileNotFoundException {

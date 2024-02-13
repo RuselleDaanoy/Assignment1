@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class CourseDA {
+public class CourseDA {
     private ArrayList<Course> courseList;
 
     public ArrayList<Course> getCourses(String studentNumber) throws FileNotFoundException {
