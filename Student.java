@@ -1,48 +1,46 @@
 import java.util.*;
 
-class Student {
+public class Student {
     private String studentNumber;
     private String name;
     private String program;
     private ArrayList<Course> courses;
 
-    // Constructor
-    public Student(String studentNumber, String name, String program) {
-        this.studentNumber = studentNumber;
-        this.name = name;
-        this.program = program;
+    public Student() {
         this.courses = new ArrayList<>();
     }
 
-    // Getter and setter methods
-    public String getStudentNumber() {
-        return studentNumber;
-    }
-
+    // Setters
     public void setStudentNumber(String studentNumber) {
         this.studentNumber = studentNumber;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getProgram() {
-        return program;
-    }
-
     public void setProgram(String program) {
         this.program = program;
+    }
+
+    // Getters
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getProgram() {
+        return program;
     }
 
     public ArrayList<Course> getCourses() {
         return courses;
     }
 
+    // Other methods
     public void addCourse(Course course) {
         courses.add(course);
     }

@@ -1,42 +1,40 @@
 import java.util.*;
 
-class BlockSection {
+public class BlockSection {
     private String blockCode;
     private String description;
     private String adviser;
     private ArrayList<Student> students;
 
     // Constructor
-    public BlockSection(String blockCode, String description, String adviser) {
-        this.blockCode = blockCode;
-        this.description = description;
-        this.adviser = adviser;
+    public BlockSection() {
         this.students = new ArrayList<>();
     }
 
-    // Getter and setter methods
-    public String getBlockCode() {
-        return blockCode;
-    }
-
+    // Setter methods
     public void setBlockCode(String blockCode) {
         this.blockCode = blockCode;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getAdviser() {
-        return adviser;
-    }
-
     public void setAdviser(String adviser) {
         this.adviser = adviser;
+    }
+    
+    // Getter methods
+    public String getBlockCode() {
+        return blockCode;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAdviser() {
+        return adviser;
     }
 
     public ArrayList<Student> getStudents() {
@@ -49,5 +47,13 @@ class BlockSection {
 
     public int getTotalStudent() {
         return students.size();
+    }
+
+    public int getTotalUnitsEnrolled() {
+        int totalUnitsEnrolled = 0;
+        for (Student student : students) {
+            totalUnitsEnrolled += student.getTotalUnitsEnrolled();
+        }
+        return totalUnitsEnrolled;
     }
 }

@@ -1,23 +1,33 @@
 import java.util.*;
 import java.io.*;
 
-class StudentDA {
+public class StudentDA {
     private ArrayList<Student> studentList;
 
     public StudentDA(String blockCode) throws FileNotFoundException {
         studentList = new ArrayList<>();
-        Scanner blockSectionStudentFile = new Scanner(new FileReader("studentInfo.csv"));
+        Scanner studentScanner = new Scanner(new FileReader("studentInfo.csv"));
 
-        while (blockSectionStudentFile.hasNext()) {
-            String blockSectionRaw = blockSectionStudentFile.nextLine();
-            String[] blockSectionArray = blockSectionRaw.split(",");
+        while (studentScanner.hasNextLine()) {
+            String studentLine = studentScanner.nextLine();
+            String[] studentData = studentLine.split(",");
 
-            if (blockSectionArray[0].trim().equals(blockCode)) {
-                Student student = new Student(blockSectionArray[1].trim(), blockSectionArray[2].trim(), blockSectionArray[3].trim());
+            if (studentData.length >= 4 && studentData[0].trim().equals(blockCode)) {
+                Student student = new Student();
+                student.setStudentNumber(studentData[1].trim());
+                student.setName(studentData[2].trim());
+                student.setProgram(studentData[3].trim());
+
+                CourseDA courseDA = new CourseDA();
+                ArrayList<Course> courses = courseDA.getCourses(student.getStudentNumber());
+                for (Course course : courses) {
+                    student.addCourse(course);
+                }
+
                 studentList.add(student);
             }
         }
-        blockSectionStudentFile.close();
+        studentScanner.close();
     }
 
     public ArrayList<Student> getStudents() {

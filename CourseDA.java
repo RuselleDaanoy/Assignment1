@@ -1,14 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class CourseDA {
+class CourseDA {
     private ArrayList<Course> courseList;
 
-    public ArrayList<Course> getCourses() {
-        return courseList;
-    }
-
-    public CourseDA(String studentNumber) throws FileNotFoundException {
+    public ArrayList<Course> getCourses(String studentNumber) throws FileNotFoundException {
         courseList = new ArrayList<>();
         try (Scanner courseFile = new Scanner(new FileReader("scheduleInfo.csv"))) {
             while (courseFile.hasNext()) {
@@ -26,5 +22,6 @@ public class CourseDA {
                 }
             }
         }
+        return courseList;
     }
 }

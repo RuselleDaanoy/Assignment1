@@ -12,7 +12,11 @@ class BlockSectionDA {
             String blockSectionLine = blockSectionScanner.nextLine();
             String[] blockSectionData = blockSectionLine.split(",");
 
-            BlockSection blockSection = new BlockSection(blockSectionData[0].trim(), blockSectionData[1].trim(), blockSectionData[2].trim());
+            BlockSection blockSection = new BlockSection();
+            blockSection.setBlockCode(blockSectionData[0].trim());
+            blockSection.setDescription(blockSectionData[1].trim());
+            blockSection.setAdviser(blockSectionData[2].trim());
+
             StudentDA studentDA = new StudentDA(blockSection.getBlockCode());
             ArrayList<Student> students = studentDA.getStudents(); // Get students for the block section
             for (Student student : students) {

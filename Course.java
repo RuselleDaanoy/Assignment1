@@ -1,4 +1,4 @@
-public class Course {
+class Course {
     private String courseCode;
     private String description;
     private Integer unit;
@@ -37,11 +37,11 @@ public class Course {
         return unit;
     }
 
-    public String getDay() {
+    public String getDay(){
         return day;
     }
 
-    public String getTime() {
+    public String getTime(){
         return time;
     }
 
