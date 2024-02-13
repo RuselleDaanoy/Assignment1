@@ -1,41 +1,44 @@
-import java.util.*;
+import java.util.ArrayList;
 import java.io.*;
 
 public class COMReportVersion2 {
     public static void main(String[] args) throws FileNotFoundException {
+        StringBuilder output = new StringBuilder();
 
         BlockSectionDA blockSectionDA = new BlockSectionDA();
-
         ArrayList<BlockSection> blockSections = blockSectionDA.getBlockSectionList();
 
         for (BlockSection blockSection : blockSections) {
-            System.out.println("Block Section Code: " + blockSection.getBlockCode()
-                    + "\nDescription: " + blockSection.getDescription()
-                    + "\nAdviser: " + blockSection.getAdviser() + "\n"
-                    + "\nTotal Students: " + blockSection.getTotalStudent() + "\n");
+            output.append("Block Section Code: ").append(blockSection.getBlockCode()).append("\n");
+            output.append("Description: ").append(blockSection.getDescription()).append("\n");
+            output.append("Adviser: ").append(blockSection.getAdviser()).append("\n");
+            output.append("Total Students: ").append(blockSection.getTotalStudent()).append("\n\n");
 
             ArrayList<Student> students = blockSection.getStudents();
             for (Student student : students) {
-                System.out.println("Student Number: " + student.getStudentNumber()
-                        + "\nStudent Name: " + student.getName()
-                        + "\nProgram: " + student.getProgram()
-                        + "\nTotal Units Enrolled: " + student.getTotalUnitsEnrolled());
+                output.append("Student Number: ").append(student.getStudentNumber()).append("\n");
+                output.append("Student Name: ").append(student.getName()).append("\n");
+                output.append("Program: ").append(student.getProgram()).append("\n");
+                output.append("Total Units Enrolled: ").append(student.getTotalUnitsEnrolled()).append("\n");
 
                 ArrayList<Course> courses = student.getCourses();
-
                 if (courses != null && !courses.isEmpty()) {
-                    System.out.println("\nCourse Code\tDescription\t\t       Units\tDay\t   Time");
+                    output.append("\nCourse Code\tDescription\t\t       Units\tDay\t   Time\n");
                     for (Course course : courses) {
-                        System.out.println(course);
+                        output.append(course).append("\n");
                     }
-                    System.out.println();
+                    output.append("\n");
                 } else {
-                    System.out.println("No courses found for this student.\n");
+                    output.append("No courses found for this student.\n\n");
                 }
             }
         }
+
+        // OUTPUT:
+        System.out.println(output.toString());
     }
 }
+
 
 
 
