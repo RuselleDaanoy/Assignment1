@@ -11,7 +11,7 @@ public class COMReportVersion2 {
         for (BlockSection blockSection : blockSections) {
             output.append("Block Section Code: ").append(blockSection.getBlockCode()).append("\n");
             output.append("Description: ").append(blockSection.getDescription()).append("\n");
-            output.append("Adviser: ").append(blockSection.getAdviser()).append("\n");
+            output.append("Adviser: ").append(blockSection.getAdviser()).append("\n\n");
             output.append("Total Students: ").append(blockSection.getTotalStudent()).append("\n\n");
 
             ArrayList<Student> students = blockSection.getStudents();
