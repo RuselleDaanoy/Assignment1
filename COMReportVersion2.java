@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 import java.io.*;
 
 public class COMReportVersion2 {
@@ -34,7 +34,6 @@ public class COMReportVersion2 {
             }
         }
 
-        // OUTPUT:
         System.out.println(output.toString());
     }
 }
