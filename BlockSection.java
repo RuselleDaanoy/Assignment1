@@ -45,8 +45,8 @@ public class BlockSection {
         students.add(student);
     }
 
-    public int getTotalStudent() {
+    public Integer getTotalStudent() {
         return students.size();
     }
-    
+
 }

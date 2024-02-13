@@ -45,8 +45,8 @@ public class Student {
         courses.add(course);
     }
 
-    public int getTotalUnitsEnrolled() {
-        int totalUnitsEnrolled = 0;
+    public Integer getTotalUnitsEnrolled() {
+        Integer totalUnitsEnrolled = 0;
         for (Course course : courses) {
             totalUnitsEnrolled += course.getUnit();
         }
