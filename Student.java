@@ -52,4 +52,5 @@ public class Student {
         }
         return totalUnitsEnrolled;
     }
+    
 }
