@@ -48,5 +48,4 @@ public class BlockSection {
     public Integer getTotalStudent() {
         return students.size();
     }
-
 }
