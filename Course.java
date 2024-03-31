@@ -49,4 +49,5 @@ public class Course {
     public String toString() {
         return String.format("%-15s %-30s %d\t%-10s %-15s", courseCode, description, unit, day, time);
     }
+    
 }
